@@ -1,19 +1,24 @@
 <?php
 
+use App\Livewire\Member;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\FirstController;
 use App\Http\Controllers\MemberController;
 
-Route::get('/', function () {
-    return view('welcome');
-});
+// Route::get('/', function () {
+//     return view('welcome');
+// });
 
 Route::get('admin/member', function (){
     return view('admin.member');
 
 });
 
+// メンバー一覧ページを表示するルートを追加
+Route::get('/', App\livewire\Member::class)->name('members.index');
+// 特定のメンバーの編集フォームを表示するルート
 Route::get('/members/{member}/edit', [MemberController::class, 'edit'])->name('members.edit');
+// 特定のメンバー情報を更新するルート（フォームからのPOST送信を受け取る）
 Route::post('/members/{member}/update', [MemberController::class,'update'])->name('members.update');
 
 
