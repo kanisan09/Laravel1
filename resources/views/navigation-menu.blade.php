@@ -15,7 +15,7 @@
                     <x-nav-link href="{{ url('/admin/member') }}" :active="request()->routeIs('admin/member')">
                         {{ __('会員一覧') }}
                     </x-nav-link>
-                    <x-nav-link href="{{ url('/admin/member') }}" :active="request()->routeIs('admin/member')">
+                    <x-nav-link href="{{ url('/introduction') }}" :active="request()->routeIs('introduction')">
                         <img src="{{ asset('img/inu.jpg') }}" alt="いぬ" class="h-12 w-auto">
                     </x-nav-link>
                     <x-nav-link href="{{ url('/admin/member') }}" :active="request()->routeIs('admin/member')">

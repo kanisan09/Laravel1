@@ -4,6 +4,7 @@ use App\Livewire\Member;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\FirstController;
 use App\Http\Controllers\MemberController;
+use App\Http\Controllers\SelfIntroductionController;
 
 // Route::get('/', function () {
 //     return view('welcome');
@@ -20,6 +21,9 @@ Route::get('/', App\livewire\Member::class)->name('members.index');
 Route::get('/members/{member}/edit', [MemberController::class, 'edit'])->name('members.edit');
 // 特定のメンバー情報を更新するルート（フォームからのPOST送信を受け取る）
 Route::post('/members/{member}/update', [MemberController::class,'update'])->name('members.update');
+
+// 自己紹介ページ
+Route::get('/introduction', [SelfIntroductionController::class, 'index'])->name('introduction');
 
 
 // ルートディレクトリにアクセスされたら、viewディレクトリのwelcomeファイルを開く
