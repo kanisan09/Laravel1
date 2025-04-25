@@ -5,6 +5,7 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\FirstController;
 use App\Http\Controllers\MemberController;
 use App\Http\Controllers\SelfIntroductionController;
+use App\Http\Controllers\TanukiController;
 
 // Route::get('/', function () {
 //     return view('welcome');
@@ -24,6 +25,11 @@ Route::post('/members/{member}/update', [MemberController::class,'update'])->nam
 
 // 自己紹介ページ
 Route::get('/introduction', [SelfIntroductionController::class, 'index'])->name('introduction');
+
+// たぬきページ
+Route::get('/tanuki',[TanukiController::class,'index'])->name('tanuki');
+
+Route::get('/article', fn() => view('article.index'))->name('article.index');
 
 
 // ルートディレクトリにアクセスされたら、viewディレクトリのwelcomeファイルを開く

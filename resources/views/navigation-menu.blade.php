@@ -18,8 +18,11 @@
                     <x-nav-link href="{{ url('/introduction') }}" :active="request()->routeIs('introduction')">
                         <img src="{{ asset('img/inu.jpg') }}" alt="いぬ" class="h-12 w-auto">
                     </x-nav-link>
-                    <x-nav-link href="{{ url('/admin/member') }}" :active="request()->routeIs('admin/member')">
+                    <x-nav-link href="{{ url('/tanuki') }}" :active="request()->routeIs('tanuki')">
                         <img src="{{ asset('img/tanuki.png') }}" alt="たぬき" class="h-12 w-auto">
+                    </x-nav-link>
+                    <x-nav-link href="{{ url('/article') }}" :active="request()->routeIs('article/index')">
+                        <img src="{{ asset('img/blog.jpg') }}" alt="ブログ" class="h-12 w-auto">
                     </x-nav-link>
                 </div>
             </div>
