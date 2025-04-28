@@ -23,13 +23,14 @@
                     @endif
                 </td>
                 <td class="border px-2 py-1 text-right">
-                    <button type="button" class="bg-yellow-500 text-yellow-50 rounded p-2 text-xs" wire:click="dispatch('editArticle', 1)">
+                    <button type="button" class="bg-yellow-500 text-yellow-50 rounded p-2 text-xs" wire:click="dispatch('editArticle', {{ $article->id }})">
                         編集
                     </button>
                     <button
                     type="button"
-                    class="g-red-600 text-red-50 rounded p-2 text-xs"
-                    onClick="onDelete({{ $article->id }})">
+                    class="bg-red-600 text-red-50 rounded p-2 mx-3 text-xs"
+                    wire:click="$dispatch('confirmDelete',{{ $article->id }})">
+                    削除
                     </button>
                 </td>
             </tr>
@@ -40,10 +41,10 @@
 {{ $articles->links() }}
 <script>
 
-    function onDelete(id){
-        if(confirm('削除します。よろしいですか？')){
-            Livewire.emitTo('article-list', 'destroy', id);
-        }
+window.addEventListener('confirmDelete',event =>{
+    if(confirm('削除します。よろしいですか？')){
+        Livewire.dispatch('deleteArticle',{articleId:event.derail});
     }
+});
 </script>
 </div>

@@ -12,9 +12,10 @@ class ArticleInput extends Component
 {
     use WithFileUploads;
 
-    protected $listteners =[
+    protected $listeners =[
         'create' => 'create',
-        'editArticle' => 'edit'
+        'editArticle' => 'edit',
+        'destroy' => 'destroy'
     ];
 
     protected $rules = [
@@ -40,9 +41,10 @@ class ArticleInput extends Component
         $this->image = null;
     }
 
-    public function edit(Article $article){
-        $this->article = $article;
+    public function edit(int $articleId){
+        $this->article = Article::findOrFail($articleId);
         $this->image = null;
+        $this->dispatch('openModal');
     }
 
     public function save(){

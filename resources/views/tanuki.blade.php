@@ -7,13 +7,13 @@
 
     <div class="py-12">
         <div class="max-w-7xl mx-auto sm:px-6 lg:px-8">
-            <p class="text-lg font-bold mx-auto ">
+            <p class="text-lg font-bold mx-auto  ">
                 {{ __('たぬき名')}}
             </p>
-            <div class="bg-white overflow-hidden shadow-xl sm:rounded-lg">
-                <div class="p-6 sm:px-20 bg-white border-b border-gray-200 flex mx-auto">
-                    <h3 class="text-lg font-bold mx-auto ">
-                        {{ __('たたぬき（立たぬき：あまり立たないたぬき　（たたぬ-き）（た-たぬき）')}}
+            <div class="bg-white overflow-hidden shadow-xl sm:rounded-lg display: flex; justify-content: center;">
+                <div class="p-6 sm:px-20 bg-white border-b border-gray-200 flex mx-auto display: flex; justify-content: center; ">
+                    <h3 class="text-lg font-bold mx-auto justify-center block text-center py-20">
+                        {{ __('たたぬき（立たぬき：あまり立たないたぬき)')}}
                     </h3>
                     <p>
                         <img src="{{ asset('img/tanuki2.jpg') }}" alt="たぬき">

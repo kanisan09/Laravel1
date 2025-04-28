@@ -11,21 +11,17 @@ class ArticleList extends Component
 
     use WithPagination;
 
-    protected $listeners = [
-        'refresh' => 'refresh',
-        'destroy' => 'destroy'
-    ];
+    protected $listeners = ['deleteArticle'];
 
-    public function render()
-    {
-        $articles = Article::paginate(10);
-
-        return view('livewire.article-list',[
-            'articles' => $articles,
-        ]);
+    public function deleteArticle(array $data){
+        $articleId = $data['articleId'];
+        Article::destroy($articleId);
+        session()->flash('status','記事を削除しました。');
+        $this->dispatch('refresh');
     }
 
-    public function destroy(Article $article){
-        $article->delete();
+    public function render(){
+        $articles = Article::latest()->paginate(10);
+        return view('livewire.article-list',['articles'=>$articles]);
     }
 }
