@@ -37,7 +37,7 @@
                     </td>
                     <td class="border px-2 py-1 text-right">
                         <button type="button" class="bg-yellow-500 text-yellow-50 rounded p-2 text-xs"
-                            wire:click="editArticle'({{ $article->id }})">
+                            wire:click="editArticle({{ $article->id }})">
                             編集
                         </button>
                         <button type="button" class="bg-red-600 text-red-50 rounded p-2 mx-3 text-xs"

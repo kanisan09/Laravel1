@@ -46,7 +46,6 @@ class ArticleInput extends Component
 
     public function edit(int $articleId){
         $this->article = Article::findOrFail($articleId);
-        $this->image = null;
         $this->isEditing = true;
         $this->dispatch('openModal');
     }

@@ -13,7 +13,7 @@ class ArticleList extends Component
     public ?int $articleIdToDelete = null;
     public ?string $message = null;
     public ?string $error = null;
-    public ?int $editingArticleId = null;
+    public $editingArticleId;
     public bool $showEditModal = false;
 
     protected $listeners = ['deleteConfirmed','editArticle','closeModal'];
@@ -50,7 +50,6 @@ class ArticleList extends Component
 
     public function editArticle(int $articleId){
         $this->editingArticleId = $articleId;
-        $this->dispatch('editArticle', $articleId);
         $this->showEditModal = true;
     }
 
